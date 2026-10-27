@@ -3,56 +3,88 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>PC Atlas | Catálogo de Componentes</title>
+    <meta name="description"
+          content="Catálogo educativo de hardware, PC gamers y tecnologías de pantallas.">
+
+    <title>PC Atlas | Hardware y Gaming</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            PC <span>ATLAS</span>
-        </div>
+    <!-- NAVEGACION PRINCIPAL -->
 
-        <nav>
+    <header class="navbar">
+        <a href="#inicio" class="logo">
+            PC <span>ATLAS</span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú"
+                aria-controls="menuPrincipal"
+                aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="menuPrincipal" class="menu">
             <a href="#inicio">Inicio</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#acerca">Acerca de</a>
+            <a href="#catalogo">Componentes</a>
+            <a href="#gaming">Gaming PCs</a>
+            <a href="#pantallas">Pantallas</a>
+            <a href="#comparador">Comparador</a>
         </nav>
     </header>
 
     <main>
 
+        <!-- PORTADA -->
+
         <section class="hero" id="inicio">
             <div class="hero-content">
-                <p class="eyebrow">HARDWARE / CONOCIMIENTO</p>
-
-                <h1>
-                    Conoce cada pieza.
-                    <span>Entiende el sistema.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Explora los componentes esenciales de una
-                    computadora, sus características técnicas
-                    y sus funciones dentro del sistema.
+                <p class="eyebrow">
+                    HARDWARE / GAMING / DISPLAY TECHNOLOGY
                 </p>
 
-                <a href="#catalogo" class="btn-primary">
-                    Explorar catálogo
-                </a>
+                <h1>
+                    Explora el hardware.
+                    <span>Comprende la tecnología.</span>
+                </h1>
+
+                <p>
+                    Una biblioteca interactiva para descubrir
+                    componentes de computadoras, configuraciones
+                    gaming y tecnologías de visualización.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#catalogo" class="btn-primary">
+                        Explorar catálogo
+                    </a>
+
+                    <a href="#pantallas" class="btn-outline">
+                        Tecnologías de pantalla
+                    </a>
+                </div>
             </div>
 
             <div class="hero-visual">
                 <div class="chip">
-                    <span>CPU</span>
-                    <small>HARDWARE SYSTEM</small>
+                    <strong>PC</strong>
+                    <small>ATLAS SYSTEM</small>
                 </div>
             </div>
         </section>
+
+        <!-- ESTADISTICAS -->
 
         <section class="stats">
             <div>
@@ -61,83 +93,163 @@
             </div>
 
             <div>
-                <strong id="totalCategorias">0</strong>
-                <span>Categorías</span>
+                <strong id="totalGaming">0</strong>
+                <span>Gaming PCs</span>
             </div>
 
             <div>
-                <strong>100%</strong>
-                <span>Interactivo</span>
+                <strong id="totalPantallas">0</strong>
+                <span>Tecnologías</span>
             </div>
         </section>
 
-        <section class="catalogo" id="catalogo">
+        <!-- CATALOGO DE COMPONENTES -->
+
+        <section class="section" id="catalogo">
 
             <div class="section-heading">
-                <p class="eyebrow">BIBLIOTECA DE HARDWARE</p>
+                <p class="eyebrow">HARDWARE LIBRARY</p>
                 <h2>Catálogo de componentes</h2>
                 <p>
-                    Busca, filtra y selecciona un componente
-                    para consultar su ficha técnica.
+                    Descubre las funciones, características
+                    y compatibilidad de cada componente.
                 </p>
             </div>
 
             <div class="toolbar">
-                <input
-                    type="search"
-                    id="buscador"
-                    placeholder="Buscar componentes..."
-                    aria-label="Buscar componentes"
-                >
+                <input type="search"
+                       id="buscador"
+                       placeholder="Buscar componentes..."
+                       aria-label="Buscar componentes">
 
-                <select id="ordenar" aria-label="Ordenar catálogo">
+                <select id="ordenar"
+                        aria-label="Ordenar componentes">
                     <option value="nombre">Nombre A-Z</option>
-                    <option value="categoria">Por categoría</option>
+                    <option value="categoria">Categoría</option>
                 </select>
             </div>
 
-            <div class="filtros" id="filtros"></div>
+            <div id="filtros" class="filtros"></div>
 
-            <p class="resultados" id="resultados"></p>
+            <p id="resultados" class="resultados"></p>
 
-            <div class="grid-componentes" id="listaComponentes">
-            </div>
+            <div id="listaComponentes" class="card-grid"></div>
 
-            <p class="sin-resultados" id="sinResultados" hidden>
+            <p id="sinResultados" class="empty" hidden>
                 No se encontraron componentes.
             </p>
+        </section>
+
+        <!-- GAMING PCS -->
+
+        <section class="section section-alt" id="gaming">
+
+            <div class="section-heading">
+                <p class="eyebrow">GAMING WORKSTATIONS</p>
+                <h2>Explora las Gaming PCs</h2>
+                <p>
+                    Analiza diferentes configuraciones
+                    y descubre cómo trabajan juntos sus
+                    componentes internos.
+                </p>
+            </div>
+
+            <div id="listaGaming" class="card-grid"></div>
+
+            <p class="source-note">
+                Imágenes externas de Newegg.
+                Equipos de referencia para fines educativos.
+                No se muestran precios ni disponibilidad.
+            </p>
+        </section>
+
+        <!-- TECNOLOGIAS DE PANTALLAS -->
+
+        <section class="section" id="pantallas">
+
+            <div class="section-heading">
+                <p class="eyebrow">DISPLAY TECHNOLOGIES</p>
+                <h2>¿Cómo funcionan las pantallas?</h2>
+                <p>
+                    Compara los distintos tipos de paneles,
+                    sus ventajas, limitaciones y aplicaciones.
+                </p>
+            </div>
+
+            <div id="listaPantallas" class="card-grid"></div>
+
+            <!-- ATRIBUTOS -->
+
+            <div class="subsection">
+                <p class="eyebrow">DISPLAY ATTRIBUTES</p>
+                <h2>Características importantes</h2>
+
+                <div id="listaAtributos" class="attributes-grid"></div>
+            </div>
+
+            <!-- OTROS COMPONENTES -->
+
+            <div class="subsection">
+                <p class="eyebrow">DISPLAY COMPONENTS</p>
+                <h2>Componentes complementarios</h2>
+
+                <div id="listaExtras" class="card-grid"></div>
+            </div>
 
         </section>
 
-        <section class="about" id="acerca">
-            <p class="eyebrow">PROYECTO EDUCATIVO</p>
+        <!-- COMPARADOR -->
 
-            <h2>Aprendiendo tecnología mediante código</h2>
+        <section class="section section-alt" id="comparador">
 
-            <p>
-                Este catálogo demuestra cómo HTML, CSS y
-                JavaScript trabajan juntos para construir
-                una aplicación web interactiva.
-            </p>
+            <div class="section-heading">
+                <p class="eyebrow">INTERACTIVE LAB</p>
+                <h2>Comparador de tecnologías</h2>
+                <p>
+                    Selecciona dos tecnologías para analizar
+                    sus características y diferencias.
+                </p>
+            </div>
+
+            <div class="compare-controls">
+                <label>
+                    Primera tecnología
+                    <select id="compareA"></select>
+                </label>
+
+                <label>
+                    Segunda tecnología
+                    <select id="compareB"></select>
+                </label>
+            </div>
+
+            <div id="resultadoComparacion"
+                 class="comparison-table"></div>
+
         </section>
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer>
-        <p>PC ATLAS | Catálogo educativo de hardware</p>
-        <p>Desarrollado con HTML, CSS y JavaScript</p>
+        <strong>PC <span>ATLAS</span></strong>
+        <p>Laboratorio educativo de hardware y tecnología.</p>
+        <p>HTML · CSS · JavaScript</p>
     </footer>
 
+    <!-- FICHA TECNICA -->
+
     <dialog id="modalComponente" class="modal">
-        <button
-            class="cerrar-modal"
-            id="cerrarModal"
-            aria-label="Cerrar ficha técnica"
-        >
+
+        <button id="cerrarModal"
+                class="cerrar-modal"
+                aria-label="Cerrar ficha">
             &times;
         </button>
 
         <div id="contenidoModal"></div>
+
     </dialog>
 
 </body>
