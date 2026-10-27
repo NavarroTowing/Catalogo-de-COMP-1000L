@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PC Atlas | Catálogo de Componentes</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            PC <span>ATLAS</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#acerca">Acerca de</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="eyebrow">HARDWARE / CONOCIMIENTO</p>
+
+                <h1>
+                    Conoce cada pieza.
+                    <span>Entiende el sistema.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Explora los componentes esenciales de una
+                    computadora, sus características técnicas
+                    y sus funciones dentro del sistema.
+                </p>
+
+                <a href="#catalogo" class="btn-primary">
+                    Explorar catálogo
+                </a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="chip">
+                    <span>CPU</span>
+                    <small>HARDWARE SYSTEM</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div>
+                <strong id="totalComponentes">0</strong>
+                <span>Componentes</span>
+            </div>
+
+            <div>
+                <strong id="totalCategorias">0</strong>
+                <span>Categorías</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Interactivo</span>
+            </div>
+        </section>
+
+        <section class="catalogo" id="catalogo">
+
+            <div class="section-heading">
+                <p class="eyebrow">BIBLIOTECA DE HARDWARE</p>
+                <h2>Catálogo de componentes</h2>
+                <p>
+                    Busca, filtra y selecciona un componente
+                    para consultar su ficha técnica.
+                </p>
+            </div>
+
+            <div class="toolbar">
+                <input
+                    type="search"
+                    id="buscador"
+                    placeholder="Buscar componentes..."
+                    aria-label="Buscar componentes"
+                >
+
+                <select id="ordenar" aria-label="Ordenar catálogo">
+                    <option value="nombre">Nombre A-Z</option>
+                    <option value="categoria">Por categoría</option>
+                </select>
+            </div>
+
+            <div class="filtros" id="filtros"></div>
+
+            <p class="resultados" id="resultados"></p>
+
+            <div class="grid-componentes" id="listaComponentes">
+            </div>
+
+            <p class="sin-resultados" id="sinResultados" hidden>
+                No se encontraron componentes.
+            </p>
+
+        </section>
+
+        <section class="about" id="acerca">
+            <p class="eyebrow">PROYECTO EDUCATIVO</p>
+
+            <h2>Aprendiendo tecnología mediante código</h2>
+
+            <p>
+                Este catálogo demuestra cómo HTML, CSS y
+                JavaScript trabajan juntos para construir
+                una aplicación web interactiva.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>PC ATLAS | Catálogo educativo de hardware</p>
+        <p>Desarrollado con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <dialog id="modalComponente" class="modal">
+        <button
+            class="cerrar-modal"
+            id="cerrarModal"
+            aria-label="Cerrar ficha técnica"
+        >
+            &times;
+        </button>
+
+        <div id="contenidoModal"></div>
+    </dialog>
+
+</body>
+</html>
